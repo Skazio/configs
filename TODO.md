@@ -1,2 +1,5 @@
 # Dans le script d'installation
-Installer la font nerd Source (Sauce) Code Pro
+
+Comprendre pourquoi le chown ne marche pas (n'est pas atteint ?)
+On dirait que fish est lancé avant automatiquement et stop le script..
+
