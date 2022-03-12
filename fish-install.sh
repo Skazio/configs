@@ -3,11 +3,15 @@ apt-add-repository ppa:fish-shell/release-3
 apt update
 apt -y install fish
 
+
 # Install OMF (package + theme manager)
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
 # Install bobthefish theme
 omf install bobthefish
+
+# Give the user the rights over omf config files
+chown -R ${USER:=$(/usr/bin/id -run)}:$USER ~/.config/omf
 
 # Create config file
 mkdir -p ~/.config/fish
@@ -24,6 +28,9 @@ echo "alias ga='git add'" >> ~/.config/fish/config.fish
 echo "alias gc='git commit'" >> ~/.config/fish/config.fish
 echo "alias gck='git checkout'" >> ~/.config/fish/config.fish
 echo "alias gd='git diff'" >> ~/.config/fish/config.fish
+
+# Give the user the rights over fish config files
+chown -R ${USER:=$(/usr/bin/id -run)}:$USER ~/.config/fish
 
 # Update the config file
 source ~/.config/fish/config.fish
