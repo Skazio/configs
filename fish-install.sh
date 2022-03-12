@@ -21,6 +21,9 @@ echo "alias gc='git commit'" >> ~/.config/fish/config.fish
 echo "alias gck='git checkout'" >> ~/.config/fish/config.fish
 echo "alias gd='git diff'" >> ~/.config/fish/config.fish
 
+# Start fish
+fish
+
 # Update the config file
 source ~/.config/fish/config.fish
 
