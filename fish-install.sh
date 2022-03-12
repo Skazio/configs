@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 omf install bobthefish
 
 # Give the user the rights over omf config files
-chown -R ${USER:=$(/usr/bin/id -run)}:$USER ~/.config/omf
+chown -R $SUDO_USER:$SUDO_USER ~/.config/omf/
 
 # Create config file
 mkdir -p ~/.config/fish
@@ -30,7 +30,7 @@ echo "alias gck='git checkout'" >> ~/.config/fish/config.fish
 echo "alias gd='git diff'" >> ~/.config/fish/config.fish
 
 # Give the user the rights over fish config files
-chown -R ${USER:=$(/usr/bin/id -run)}:$USER ~/.config/fish
+chown -R $SUDO_USER:$SUDO_USER ~/.config/fish/
 
 # Update the config file
 source ~/.config/fish/config.fish
