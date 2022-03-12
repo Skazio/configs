@@ -9,6 +9,10 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 # Install bobthefish theme
 omf install bobthefish
 
+# Create config file
+mkdir -p ~/.config/fish
+touch ~/.config/fish/config.fish
+
 # Set colorscheme + theme font
 echo "set -g theme_color_scheme nord" >> ~/.config/fish/config.fish
 echo "set -g theme_nerd_fonts yes" >> ~/.config/fish/config.fish
