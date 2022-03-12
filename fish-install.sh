@@ -1,9 +1,3 @@
-# Update repositories
-apt update
-
-# Install curl
-apt install curl
-
 # Install Fish
 apt-add-repository ppa:fish-shell/release-3
 apt update
