@@ -7,10 +7,10 @@ apt -y install fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
 chmod +x omf-install.sh
 # We need to exit the automated launched fish shell in order to keep installing
-./omf-install.sh && exit
+fish -c ./omf-install.sh
 
 # Install bobthefish theme
-omf install bobthefish
+fish -c omf install bobthefish
 
 # Give the user the rights over omf config files
 chown -R $SUDO_USER:$SUDO_USER ~/.config/omf/
