@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash"
 
 # Install Fish
 apt-add-repository ppa:fish-shell/release-3
@@ -9,11 +9,11 @@ apt -y install fish
 sudo -u $SUDO_USER curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install
 chmod +x omf-install
 echo "******* DEBUG - START ***********"
-sudo -u $SUDO_USER fish omf-install
+sudo -u $SUDO_USER fish -c "omf-install"
 echo "******* DEBUG - END ***********"
 
 # Install bobthefish theme
-sudo -u $SUDO_USER fish -c omf install bobthefish
+sudo -u $SUDO_USER fish -c "omf install bobthefish"
 
 # Create config file
 sudo -u $SUDO_USER mkdir -p ~/.config/fish
