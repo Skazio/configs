@@ -6,10 +6,10 @@ apt update
 apt -y install fish
 
 # Install OMF (package + theme manager)
-sudo -u $SUDO_USER curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install
-chmod +x omf-install
+sudo -u $SUDO_USER curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
+chmod +x omf-install.sh
 echo "******* DEBUG - START ***********"
-sudo -u $SUDO_USER fish -c "omf-install"
+sudo -u $SUDO_USER fish -c "./omf-install.sh"
 echo "******* DEBUG - END ***********"
 
 # Install bobthefish theme
