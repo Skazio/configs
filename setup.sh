@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Add the execution flag
 chmod +x install-scripts/misc-install.sh
 chmod +x install-scripts/fish-install.sh

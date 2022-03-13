@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Update repositories
 apt update
 

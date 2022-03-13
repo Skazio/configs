@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install Fish
 apt-add-repository ppa:fish-shell/release-3
 apt update
