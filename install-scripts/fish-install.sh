@@ -9,7 +9,7 @@ apt -y install fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
 chmod +x omf-install.sh
 echo "******* DEBUG - START ***********"
-fish -c ./omf-install.sh
+fish ./omf-install.sh
 echo "******* DEBUG - END ***********"
 
 # Install bobthefish theme
