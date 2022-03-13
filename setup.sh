@@ -12,8 +12,6 @@ chmod +x install-scripts/exa-install.sh
 ./install-scripts/peco-install.sh
 ./install-scripts/exa-install.sh
 
-# Start fish shell
-neofetch > fish
+# Start fish shell & launch neofetch
+fish -C neofetch
 
-# Launch neofetch
-neofetch
