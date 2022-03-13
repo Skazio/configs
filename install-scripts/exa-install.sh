@@ -12,8 +12,10 @@ rm -r exa-linux.zip
 # Add alias
 echo "
 if type -q exa
-	alias ll \"exa -l -g --icons\"
-	alias lla \"ll -a\"
+	alias ll   \"exa -l -g --header --icons\"
+	alias lla  \"ll -a\"
+	alias llt  \"ll --tree -L 2\"
+	alias llta \"lt -a\"
 end
 " >> ~/.config/fish/config.fish
 
