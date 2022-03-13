@@ -8,6 +8,9 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 chmod +x omf-install.sh
 ./omf-install.sh
 
+# We need to exit the automated launched fish shell in order to keep installing
+exit
+
 # Install bobthefish theme
 omf install bobthefish
 
