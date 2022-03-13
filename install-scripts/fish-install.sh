@@ -6,10 +6,8 @@ apt -y install fish
 # Install OMF (package + theme manager)
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
 chmod +x omf-install.sh
-./omf-install.sh
-
 # We need to exit the automated launched fish shell in order to keep installing
-exit
+./omf-install.sh && exit
 
 # Install bobthefish theme
 omf install bobthefish
