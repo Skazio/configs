@@ -12,3 +12,6 @@ apt install -y unzip
 # Install pip
 apt install -y python3-pip
 
+# Install neofetch
+apt install -y neofetch
+
