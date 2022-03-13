@@ -12,3 +12,6 @@ chmod +x install-scripts/exa-install.sh
 ./install-scripts/peco-install.sh
 ./install-scripts/exa-install.sh
 
+# Start fish shell
+fish
+
