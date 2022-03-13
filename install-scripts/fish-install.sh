@@ -8,7 +8,8 @@ apt install -y fish
 # Install OMF (package + theme manager)
 sudo -u $SUDO_USER curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
 echo "******* DEBUG - START ***********"
-sudo -u $SUDO_USER fish install -y
+# --noninteractive prevents a new shell to start
+sudo -u $SUDO_USER fish install --noninteractive
 #sudo -u $SUDO_USER curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
 #chmod +x omf-install.sh
 #sudo -u $SUDO_USER fish -c "./omf-install.sh && exit"
