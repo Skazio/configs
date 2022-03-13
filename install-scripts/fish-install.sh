@@ -6,18 +6,18 @@ apt update
 apt -y install fish
 
 # Install OMF (package + theme manager)
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
-chmod +x omf-install.sh
+sudo -u $SUDO_USER curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install
+chmod +x omf-install
 echo "******* DEBUG - START ***********"
-fish ./omf-install.sh
+sudo -u $SUDO_USER fish omf-install
 echo "******* DEBUG - END ***********"
 
 # Install bobthefish theme
-fish -c omf install bobthefish
+sudo -u $SUDO_USER fish -c omf install bobthefish
 
 # Create config file
-mkdir -p ~/.config/fish
-touch ~/.config/fish/config.fish
+sudo -u $SUDO_USER mkdir -p ~/.config/fish
+sudo -u $SUDO_USER touch ~/.config/fish/config.fish
 
 # Set colorscheme + theme font
 echo "set -g theme_color_scheme nord" >> ~/.config/fish/config.fish
