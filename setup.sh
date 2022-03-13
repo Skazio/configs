@@ -1,10 +1,12 @@
 # Add the execution flag
-chmod +x misc-install.sh
-chmod +x fish-install.sh
-chmod +x peco-install.sh
+chmod +x install-scripts/misc-install.sh
+chmod +x install-scripts/fish-install.sh
+chmod +x install-scripts/peco-install.sh
+chmod +x install-scripts/exa-install.sh
 
 # Start all the scripts
-./misc-install.sh
-./fish-install.sh
-./peco-install.sh
+./install-scripts/misc-install.sh
+./install-scripts/fish-install.sh
+./install-scripts/peco-install.sh
+./install-scripts/exa-install.sh
 
