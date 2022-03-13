@@ -8,14 +8,13 @@ apt -y install fish
 # Install OMF (package + theme manager)
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
 chmod +x omf-install.sh
-# We need to exit the automated launched fish shell in order to keep installing
 fish -c ./omf-install.sh
 
 # Install bobthefish theme
 fish -c omf install bobthefish
 
 # Give the user the rights over omf config files
-chown -R $SUDO_USER:$SUDO_USER ~/.config/omf/
+# chown -R $SUDO_USER:$SUDO_USER ~/.config/omf/
 
 # Create config file
 mkdir -p ~/.config/fish
@@ -34,7 +33,11 @@ echo "alias gck='git checkout'" >> ~/.config/fish/config.fish
 echo "alias gd='git diff'" >> ~/.config/fish/config.fish
 
 # Give the user the rights over fish config files
-chown -R $SUDO_USER:$SUDO_USER ~/.config/fish/
+# chown -R $SUDO_USER:$SUDO_USER ~/.config/fish/
+
+# Give permisions to config and local files
+chown -R $SUDO_USER:$SUDO_USER ~/.config/
+chown -R $SUDO_USER:$SUDO_USER ~/.local
 
 # Update the config file
 source ~/.config/fish/config.fish
