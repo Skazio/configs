@@ -3,7 +3,6 @@ apt-add-repository ppa:fish-shell/release-3
 apt update
 apt -y install fish
 
-
 # Install OMF (package + theme manager)
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf-install.sh
 chmod +x omf-install.sh
