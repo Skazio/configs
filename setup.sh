@@ -13,5 +13,6 @@ chmod +x install-scripts/exa-install.sh
 ./install-scripts/exa-install.sh
 
 # Start fish shell & launch neofetch
+clear
 fish -C neofetch
 
