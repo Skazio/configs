@@ -15,7 +15,7 @@ if type -q exa
 	alias ll   \"exa -l -g --header --icons\"
 	alias lla  \"ll -a\"
 	alias llt  \"ll --tree -L 2\"
-	alias llta \"lt -a\"
+	alias llta \"llt -a\"
 end
 " >> ~/.config/fish/config.fish
 
