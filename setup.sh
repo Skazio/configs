@@ -6,6 +6,7 @@ chmod +x install-scripts/fish-install.sh
 chmod +x install-scripts/peco-install.sh
 chmod +x install-scripts/exa-install.sh
 chmod +x install-scripts/git-install.sh
+chmod +x install-scripts/bat-install.sh
 
 # Start all the scripts
 ./install-scripts/misc-install.sh
@@ -13,6 +14,7 @@ chmod +x install-scripts/git-install.sh
 ./install-scripts/peco-install.sh
 ./install-scripts/exa-install.sh
 ./install-scripts/git-install.sh
+./install-scripts/bat-install.sh
 
 # Start fish shell & launch neofetch
 clear
