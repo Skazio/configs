@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+sudo -u $SUDO_USER wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+sudo -u $SUDO_USER bash install.sh
 
 # Install the omf wrapper
-omf install nvm
+sudo -u $SUDO_USER fish -c "omf install nvm"
+
+# Remove the installer
+sudo rm install.sh
 
