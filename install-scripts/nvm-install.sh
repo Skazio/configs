@@ -10,3 +10,5 @@ sudo -u $SUDO_USER fish -c "omf install nvm"
 # Remove the installer
 sudo rm install.sh
 
+echo -e "\033[33mYou need to restart your system for nvm to work. (for WSL go in a PowerShell and run \`wsl --shutdown\`)\033[0m"
+
