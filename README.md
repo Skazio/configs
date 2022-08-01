@@ -15,3 +15,13 @@ To automaticly install everything, just type in a terminal :
 git clone https://github.com/Skazio/configs.git && cd configs/ && chmod +x setup.sh && sudo ./setup.sh
 ```
 
+## Manual install
+
+Some programs are not automaticaly install (see [Optional install section](#optional install)) and/or if you want to only install some programs, go into `install-scripts/` and `chmod +x <script-name.sh> && sudo ./<script-name.sh>`
+
+## Optional install
+
+Here are the list of the scripts which are not automaticly ran by `setup.sh` :
+
+- `nvm-install.sh`
+
