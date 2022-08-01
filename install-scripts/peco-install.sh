@@ -11,5 +11,5 @@ echo "
 function fish_user_key_bindings
   bind \cr 'peco_select_history (commandline -b)'
 end
-" >> ~/.config/fish/config.fish
+" >> $USER_HOME/.config/fish/config.fish
 

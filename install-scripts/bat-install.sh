@@ -4,6 +4,6 @@
 apt install -y bat
 
 # depends of the system
-echo "alias cat='batcat'" >> ~/.config/config.fish
-echo "alias cat='bat'" >> ~/.config/config.fish
+echo "alias cat='batcat'" >> $USER_HOME/.config/config.fish
+echo "alias cat='bat'" >> $USER_HOME/.config/config.fish
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Export USER_HOME variable to easily get access of the home directory
+export USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
 # Add the execution flag
 chmod +x install-scripts/misc-install.sh
 chmod +x install-scripts/fish-install.sh
@@ -17,6 +20,7 @@ chmod +x install-scripts/bat-install.sh
 ./install-scripts/bat-install.sh
 
 # Start fish shell & launch neofetch
+unset USER_HOME
 clear
 fish -C neofetch
 

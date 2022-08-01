@@ -14,25 +14,25 @@ sudo -u $SUDO_USER fish install --noninteractive
 sudo -u $SUDO_USER fish -c "omf install bobthefish"
 
 # Create config file
-sudo -u $SUDO_USER mkdir -p ~/.config/fish
-sudo -u $SUDO_USER touch ~/.config/fish/config.fish
+sudo -u $SUDO_USER mkdir -p $USER_HOME/.config/fish
+sudo -u $SUDO_USER touch $USER_HOME/.config/fish/config.fish
 
 # Set colorscheme + theme font
-echo "set -g theme_color_scheme nord" >> ~/.config/fish/config.fish
-echo "set -g theme_nerd_fonts yes" >> ~/.config/fish/config.fish
+echo "set -g theme_color_scheme nord" >> $USER_HOME/.config/fish/config.fish
+echo "set -g theme_nerd_fonts yes" >> $USER_HOME/.config/fish/config.fish
 
 # Add aliases
-echo "alias gs='git status'" >> ~/.config/fish/config.fish
-echo "alias gl='git log'" >> ~/.config/fish/config.fish
-echo "alias ga='git add'" >> ~/.config/fish/config.fish
-echo "alias gc='git commit'" >> ~/.config/fish/config.fish
-echo "alias gck='git checkout'" >> ~/.config/fish/config.fish
-echo "alias gd='git diff'" >> ~/.config/fish/config.fish
+echo "alias gs='git status'" >> $USER_HOME/.config/fish/config.fish
+echo "alias gl='git log'" >> $USER_HOME/.config/fish/config.fish
+echo "alias ga='git add'" >> $USER_HOME/.config/fish/config.fish
+echo "alias gc='git commit'" >> $USER_HOME/.config/fish/config.fish
+echo "alias gck='git checkout'" >> $USER_HOME/.config/fish/config.fish
+echo "alias gd='git diff'" >> $USER_HOME/.config/fish/config.fish
 
 # Give permisions back to config and local files
-chown -R $SUDO_USER:$SUDO_USER ~/.config/
-chown -R $SUDO_USER:$SUDO_USER ~/.local
+chown -R $SUDO_USER:$SUDO_USER $USER_HOME/.config/
+chown -R $SUDO_USER:$SUDO_USER $USER_HOME/.local
 
 # Update the config file
-source ~/.config/fish/config.fish
+source $USER_HOME/.config/fish/config.fish
 

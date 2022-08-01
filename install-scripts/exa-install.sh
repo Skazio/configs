@@ -17,5 +17,5 @@ if type -q exa
 	alias llt  \"ll --tree -L 2\"
 	alias llta \"llt -a\"
 end
-" >> ~/.config/fish/config.fish
+" >> $USER_HOME/.config/fish/config.fish
 
