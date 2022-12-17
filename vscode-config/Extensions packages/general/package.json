@@ -3,6 +3,7 @@
   "displayName": "General",
   "description": "General use-cases extensions",
   "publisher": "Skazio",
+  "icon": "vscode.png",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.74.0"
