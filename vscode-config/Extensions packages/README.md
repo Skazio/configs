@@ -1,8 +1,8 @@
-# Extensions pack
+# Extensions packs
 
-Extensions pack allow to easily manage extensions base on your coding environment, framework, language, etc.
+Extensions packs allow to easily manage extensions based on your coding environment, framework, language, etc.
 
-## How to create extensions
+## How to create an extensions pack
 
 First run
 
@@ -18,7 +18,7 @@ yo code
 
 Answer the prompted questions.
 
-## How to Bundle extensions pack
+## How to bundle an extensions pack
 
 First run
 
@@ -32,6 +32,6 @@ Then make sure to be in the folder of your extension pack and run
 vsce package
 ```
 
-## How to ship
+## How to ship an extensions pack
 
 You only need to ship the `*.vsix` file
