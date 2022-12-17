@@ -1,0 +1,22 @@
+{
+  "name": "general",
+  "displayName": "General",
+  "description": "General use-cases extensions",
+  "publisher": "Skazio",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [
+    "vscodevim.vim",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vsliveshare.vsliveshare",
+    "PKief.material-icon-theme",
+    "Perkovec.emoji",
+    "Equinusocio.vsc-community-material-theme",
+    "akamud.vscode-theme-onedark"
+  ]
+}
