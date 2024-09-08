@@ -1,0 +1,10 @@
+default_shell "fish"
+
+keybinds {
+    unbind "Ctrl b"
+    unbind "Ctrl q"
+    shared_except "locked" {
+        bind "Ctrl q" {  }
+    }
+}
+
