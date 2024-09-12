@@ -1,4 +1,4 @@
-require("skazio.remap")
-require("skazio.plugin")
-require("skazio.set")
+require("skazio.keymaps")
+require("skazio.lazy")
+require("skazio.options")
 
