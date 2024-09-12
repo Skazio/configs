@@ -1,7 +1,5 @@
 set -x EDITOR /usr/local/bin/nvim
 
-set -g theme_color_scheme nord
-set -g theme_nerd_fonts yes
 alias gs='git status'
 alias gl='git log'
 alias ga='git add'
@@ -18,9 +16,9 @@ end
 
 if type -q exa
 	alias ll   "exa -l -g --header --icons"
-	alias lla  "ll -a"
+	alias lla  "ll -ah"
 	alias llt  "ll --tree -L 2"
-	alias llta "llt -a"
+	alias llta "llt -ha"
 end
 
 alias cat='batcat'
