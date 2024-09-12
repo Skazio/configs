@@ -4,10 +4,9 @@ This hosts my configuration files.
 
 ## Fonts
 
-For `bobthefish` to correctly work, use `SourceCodePro` font from either or :
+For `bobthefish` to correctly work, use a [Nerd Font](https://www.nerdfonts.com/). Here's a nice recommendation:
 
-- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro/Regular) (Recommended)
-- [powerline](https://github.com/powerline/fonts/tree/master/SourceCodePro) (Compatibility issues)
+- Roboto Mono Nerd Font
 
 ## Automated install
 
