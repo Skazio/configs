@@ -24,17 +24,24 @@ vim.keymap.set("n", "Y", "Y:clip")
 
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
-    name = 'WslClipboard',
-    copy = {
-      ['+'] = 'clip.exe',
-      ['*'] = 'clip.exe',
-    },
-    cache_enabled = 0,
-  }
+        name = "win32yank-wsl",
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+        cache_enabled = true,
+    }
 end
 
 vim.keymap.set("n", "<leader>ss", "<Esc>:%s/\\V")
 vim.keymap.set("n", "<leader>sr", "<Esc>:%s/")
 
 vim.keymap.set("c", "h ", "vert bo help ")
+
+vim.keymap.set("n", "zC", "zcvzC")
+vim.keymap.set("n", "zO", "zozczO")
 

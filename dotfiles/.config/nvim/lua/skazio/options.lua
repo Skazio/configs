@@ -36,3 +36,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 
+
+P = function (v)
+    print(vim.inspect(v))
+    return v
+end
+

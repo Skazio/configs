@@ -35,7 +35,7 @@ keybinds clear-defaults=true {
         bind "Tab" { SwitchFocus; }
         bind "d" { NewPane "Down"; }
         bind "n" { NewPane "Right"; }
-        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
         bind "t" { ToggleFloatingPanes; SwitchToMode "Normal"; }
