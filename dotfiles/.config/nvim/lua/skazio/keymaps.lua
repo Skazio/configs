@@ -1,26 +1,21 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-vim.keymap.set("n", "<C-b>", "<Esc>:NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", "<Esc>:NvimTreeToggle<CR>")
 
 vim.keymap.set("n", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>gi")
 vim.keymap.set("v", "<C-s>", "<Esc>:w<CR>gv")
 
 vim.keymap.set("n", "<leader>h", "<Esc>:nohl<CR>")
-vim.keymap.set("n", "<leader>p", "j")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "q:", "<nop>")
+vim.keymap.set({ "n", "i", "v" }, "<C-Tab>", "<Esc>:BufferNext<CR>")
+vim.keymap.set({ "n", "i", "v" }, "<C-S-Tab>", "<Esc>:BufferPrevious<CR>")
 
-vim.keymap.set("n", "<C-S-Tab>", "<Esc>:BufferPrevious<CR>")
-vim.keymap.set("n", "<C-Tab>", "<Esc>:BufferNext<CR>")
-vim.keymap.set("i", "<C-S-Tab>", "<Esc>:BufferPrevious<CR>")
-vim.keymap.set("i", "<C-Tab>", "<Esc>:BufferNext<CR>")
-
-vim.keymap.set("n", "Y", "Y:clip")
-
+vim.keymap.set("n", "Y", "y$")
 
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
@@ -44,4 +39,9 @@ vim.keymap.set("c", "h ", "vert bo help ")
 
 vim.keymap.set("n", "zC", "zcvzC")
 vim.keymap.set("n", "zO", "zozczO")
+
+vim.keymap.set("n", "<leader>qo", ":copen<CR>")
+vim.keymap.set("n", "<leader>qc", ":cclose<CR>")
+vim.keymap.set("n", "<leader>qn", ":cnext<CR>")
+vim.keymap.set("n", "<leader>qp", ":cprev<CR>")
 

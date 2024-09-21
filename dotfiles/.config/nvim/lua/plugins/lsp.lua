@@ -24,10 +24,10 @@ return {
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
-                ['<S-tab>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<tab>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<CR>'] = cmp.mapping.confirm({select = true}),
                 ['<C-space>'] = cmp.mapping.complete(),
+                ['<tab>'] = cmp.mapping.select_next_item(cmp_select),
+                ['<S-tab>'] = cmp.mapping.select_prev_item(cmp_select),
+                ['<CR>'] = cmp.mapping.confirm({select = true}),
             }),
             snippet = {
                 expand = function(args)
