@@ -1,5 +1,23 @@
 vim.opt.termguicolors = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" }) -- background transparent
+vim.o.showmode = false
+
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] =  "",
+            [vim.diagnostic.severity.WARN] =  "",
+            [vim.diagnostic.severity.HINT] =  "",
+            [vim.diagnostic.severity.INFO] = "󰠠",
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+            [vim.diagnostic.severity.WARN] = 'WarningMsg',
+            [vim.diagnostic.severity.HINT] = 'Question',
+            [vim.diagnostic.severity.INFO] = 'Search',
+        },
+    },
+})
 
 vim.opt.updatetime = 50
 

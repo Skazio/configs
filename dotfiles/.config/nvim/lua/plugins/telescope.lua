@@ -4,6 +4,7 @@ return {
         "nvim-lua/plenary.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         "nvim-tree/nvim-web-devicons",
+        "folke/todo-comments.nvim",
     },
     config = function ()
         local telescope = require("telescope")
@@ -23,8 +24,8 @@ return {
                         ["-"] = actions.remove_selection + actions.move_selection_next,
                     },
                     i = {
-                        ["<tab>"] = actions.move_selection_next,
-                        ["<S-tab>"] = actions.move_selection_previous,
+                        ["<S-tab>"] = actions.move_selection_next,
+                        ["<tab>"] = actions.move_selection_previous,
                         ["<C-n>"] = actions.cycle_history_next,
                         ["<C-p>"] = actions.cycle_history_prev,
                     }
@@ -33,7 +34,8 @@ return {
         })
 
         vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
-        vim.keymap.set("n", "<leader>f", builtin.live_grep, { desc = "Find strings" })
+        vim.keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Find strings" })
+        vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Find todos" })
     end
 }
 
