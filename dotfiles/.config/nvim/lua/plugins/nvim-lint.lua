@@ -1,3 +1,4 @@
+-- nvim-lint handler linter messages
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },

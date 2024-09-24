@@ -1,3 +1,4 @@
+-- conform formats files based on the formatter per file type
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
