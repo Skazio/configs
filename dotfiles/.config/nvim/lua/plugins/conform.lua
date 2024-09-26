@@ -6,6 +6,7 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
+            -- TODO: Add formatter by file type
 			formatters_by_ft = {
 				javascript = { "prettier" },
 				typescript = { "prettier" },

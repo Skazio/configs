@@ -36,6 +36,7 @@ return {
         vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
         vim.keymap.set("n", "<leader>ff", builtin.live_grep, { desc = "Find strings" })
         vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Find todos" })
+        vim.keymap.set("n", "<leader>fb",builtin.buffers, { desc = "Find buffers" })
     end
 }
 

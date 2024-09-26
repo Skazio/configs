@@ -17,8 +17,8 @@ vim.keymap.set({ "n", "i", "v" }, "<C-S-Tab>", "<Esc>:BufferPrevious<CR>")
 
 vim.keymap.set("n", "Y", "y$", { desc = "Copy till the end of line" })
 
-vim.keymap.set("n", "<leader>ss", "<Esc>:%s/\\V") -- not sure to keep
-vim.keymap.set("n", "<leader>sr", "<Esc>:%s/") -- not sure to keep
+-- vim.keymap.set("n", "<leader>ss", "<Esc>:%s/\\V") -- not sure to keep
+-- vim.keymap.set("n", "<leader>sr", "<Esc>:%s/") -- not sure to keep
 
 vim.keymap.set("n", "zC", "zcvzC", { desc = "Fold recursively" })
 vim.keymap.set("n", "zO", "zozczO", { desc = "Unfold recursively" })
