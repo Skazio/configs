@@ -12,8 +12,8 @@ vim.keymap.set("n", "<leader>h", "<Esc>:nohl<CR>", { desc = "Remove current sear
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line 1 down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line 1 up" })
 
-vim.keymap.set({ "n", "i", "v" }, "<C-Tab>", "<Esc>:BufferNext<CR>")
-vim.keymap.set({ "n", "i", "v" }, "<C-S-Tab>", "<Esc>:BufferPrevious<CR>")
+vim.keymap.set("n", "<Tab>", "<Esc>:bnext<CR>")
+vim.keymap.set("n", "<S-Tab>", "<Esc>:bprev<CR>")
 
 vim.keymap.set("n", "Y", "y$", { desc = "Copy till the end of line" })
 
@@ -33,4 +33,3 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close current tab" 
 vim.keymap.set("n", "<leader>tn", ":tabnext<CR>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "<leader>tf", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
-

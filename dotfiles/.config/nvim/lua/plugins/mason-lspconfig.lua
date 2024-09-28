@@ -10,12 +10,11 @@ return {
 	config = function()
 		local mason_lspconfig = require("mason-lspconfig")
 
-        -- We need to call this here, to make sure lsp-zero execute only after
-        -- all LSP server are loaded and running
+		-- We need to call this here, to make sure lsp-zero execute only after
+		-- all LSP server are loaded and running
 		require("lsp-zero").extend_lspconfig()
 
 		mason_lspconfig.setup()
-
 
 		mason_lspconfig.setup_handlers({
 			-- default handler
@@ -31,7 +30,7 @@ return {
 
 				local lspconfig = require("lspconfig")
 
-				lspconfig.tsserver.setup({
+				lspconfig.ts_ls.setup({
 					init_options = {
 						plugins = {
 							{

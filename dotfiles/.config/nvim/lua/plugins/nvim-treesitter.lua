@@ -1,3 +1,6 @@
+-- nvim-treesitter anaylze the current buffer to create an AST used for
+-- enhanced editor capabilities (ie. better highlight, textobjects, selection)
+-- Needs the language parser to be installed
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = function()
