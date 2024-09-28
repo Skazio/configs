@@ -33,3 +33,7 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close current tab" 
 vim.keymap.set("n", "<leader>tn", ":tabnext<CR>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "<leader>tf", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gra")
+vim.keymap.del("n", "grr")
