@@ -40,6 +40,8 @@ return {
         vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Find strings" })
         vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Find todos" })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
+        vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "Find marks" })
+        vim.keymap.set("n", "<leader>fc", builtin.git_bcommits, { desc = "Find changes" })
 
         vim.keymap.set("n", "<leader>fd", function()
             builtin.lsp_definitions({ jump_type = "never" })

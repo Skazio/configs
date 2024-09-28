@@ -1,28 +1,23 @@
 vim.opt.termguicolors = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" }) -- background transparent
 vim.o.showmode = false
-vim.opt.guicursor = "n-c:block,"
-	.. "i-ci-ve:ver25,"
-	.. "v-r-cr:hor20,"
-	.. "o:hor50,"
-	.. "i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,"
-	.. "sm:block-blinkwait175-blinkoff150-blinkon175"
+vim.opt.guicursor = "n-c:block," .. "i-ci-ve:ver25," .. "v-r-cr:hor20," .. "o:hor50," .. "i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor," .. "sm:block-blinkwait175-blinkoff150-blinkon175"
 
 vim.diagnostic.config({
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.HINT] = "",
-			[vim.diagnostic.severity.INFO] = "󰠠",
-		},
-		numhl = {
-			[vim.diagnostic.severity.ERROR] = "ErrorMsg",
-			[vim.diagnostic.severity.WARN] = "WarningMsg",
-			[vim.diagnostic.severity.HINT] = "Question",
-			[vim.diagnostic.severity.INFO] = "Search",
-		},
-	},
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.HINT] = "",
+            [vim.diagnostic.severity.INFO] = "󰠠",
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+            [vim.diagnostic.severity.WARN] = "WarningMsg",
+            [vim.diagnostic.severity.HINT] = "Question",
+            [vim.diagnostic.severity.INFO] = "Search",
+        },
+    },
 })
 
 vim.opt.updatetime = 50
@@ -59,27 +54,27 @@ vim.opt.splitbelow = true
 
 vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
-	end,
+    callback = function()
+        vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
+    end,
 })
 if vim.fn.has("wsl") == 1 then
-	vim.g.clipboard = {
-		name = "win32yank-wsl",
-		copy = {
-			["+"] = "win32yank.exe -i --crlf",
-			["*"] = "win32yank.exe -i --crlf",
-		},
-		paste = {
-			["+"] = "win32yank.exe -o --lf",
-			["*"] = "win32yank.exe -o --lf",
-		},
-		cache_enabled = true,
-	}
+    vim.g.clipboard = {
+        name = "win32yank-wsl",
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+        cache_enabled = true,
+    }
 end
 
 -- Print inside of lua tables ; useful when creating/debuggin plugins
 P = function(v)
-	print(vim.inspect(v))
-	return v
+    print(vim.inspect(v))
+    return v
 end

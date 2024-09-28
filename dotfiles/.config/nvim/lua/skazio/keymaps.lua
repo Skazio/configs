@@ -1,3 +1,7 @@
+-- How to find on a key got map:
+-- :verbose map <keymap_sequence>
+-- ie. :verbose map gr
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -24,12 +28,12 @@ vim.keymap.set("n", "zC", "zcvzC", { desc = "Fold recursively" })
 vim.keymap.set("n", "zO", "zozczO", { desc = "Unfold recursively" })
 
 vim.keymap.set("n", "<leader>qo", ":copen<CR>", { desc = "Open quickfix list" })
-vim.keymap.set("n", "<leader>qc", ":cclose<CR>", { desc = "Close quickfix list" })
+vim.keymap.set("n", "<leader>qx", ":cclose<CR>", { desc = "Close quickfix list" })
 vim.keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = "Next quickfix element" })
 vim.keymap.set("n", "<leader>qp", ":cprev<CR>", { desc = "Previous quickfix element" })
 
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open new tab" })
-vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close current tab" })
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close current tab" })
 vim.keymap.set("n", "<leader>tn", ":tabnext<CR>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "<leader>tf", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
