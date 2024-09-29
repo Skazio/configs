@@ -10,6 +10,6 @@ return {
 
         vim.keymap.set("v", "<leader>gs", function()
             gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-        end)
+        end, { desc = "Git stage hunk" })
     end,
 }
