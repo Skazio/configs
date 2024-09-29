@@ -17,5 +17,8 @@ return {
         end, { desc = "Git reset selected hunks" })
 
         vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Git preview hunk" })
+
+        vim.keymap.set("n", "[h", gitsigns.prev_hunk, { desc = "Git previous hunk" })
+        vim.keymap.set("n", "]h", gitsigns.next_hunk, { desc = "Git next hunk" })
     end,
 }
