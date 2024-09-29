@@ -10,6 +10,12 @@ return {
 
         vim.keymap.set("v", "<leader>gs", function()
             gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-        end, { desc = "Git stage hunk" })
+        end, { desc = "Git stage selected hunks" })
+
+        vim.keymap.set("v", "<leader>gr", function()
+            gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+        end, { desc = "Git reset selected hunks" })
+
+        vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Git preview hunk" })
     end,
 }

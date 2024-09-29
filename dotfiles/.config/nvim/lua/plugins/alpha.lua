@@ -29,6 +29,10 @@ return {
 		dashboard.section.footer.val = "🚀 Blazingly fast"
 
 		dashboard.section.buttons.val = {
+			dashboard.button("o", "  Open Working directory", ":cd `pwd`<CR>:NvimTreeOpen<CR>"),
+
+			dashboard.button("⠀", "", ""),
+
 			dashboard.button("f", "󰡄  Open ui", ":cd `pwd`<CR>:NvimTreeOpen<CR>"),
 			dashboard.button("a", "  Open ui-admin", ":cd `pwd`<CR>:NvimTreeOpen<CR>"),
 			dashboard.button("b", "  Open api", ":cd `pwd`<CR>:NvimTreeOpen<CR>"),
@@ -36,7 +40,6 @@ return {
 
 			dashboard.button("⠀", "", ""),
 
-			dashboard.button("o", "  Open Working directory", ":cd `pwd`<CR>:NvimTreeOpen<CR>"),
 			dashboard.button("q", "󰅙  Quit vim", ":qa!<CR>"),
 		}
 
