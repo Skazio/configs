@@ -1,3 +1,5 @@
+vim.opt.shell = '/usr/bin/fish'
+
 vim.opt.termguicolors = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" }) -- background transparent
 vim.o.showmode = false

@@ -26,9 +26,11 @@ return {
 
                 vim.keymap.set("n", "gd", telescope.lsp_definitions, { buffer = event.buf, desc = "Goto Definition" })
                 vim.keymap.set("n", "gr", telescope.lsp_references, { buffer = event.buf, desc = "Goto References" })
-                vim.keymap.set("n", "gt", telescope.lsp_type_definitions, { buffer = event.buf, desc = "Type [D]efinition" })
+                vim.keymap.set("n", "gt", telescope.lsp_type_definitions, { buffer = event.buf, desc = "Goto Type definition" })
                 vim.keymap.set("n", "F2", vim.lsp.buf.rename, { buffer = event.buf, desc = "Rename" })
                 vim.keymap.set({ "n", "i", "x" }, "<A-enter>", vim.lsp.buf.code_action, { buffer = event.buf, desc = "Code Action" })
+                vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+                vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
                 -- Highlight the variable under cursor
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
