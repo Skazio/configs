@@ -3,11 +3,16 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
-        "L3MON4D3/LuaSnip",
+        "L3MON4D3/LuaSnip", -- snipet engine
+        "saadparwaiz1/cmp_luasnip", -- provide LuaSnip as a source to cmp
+        "rafamadriz/friendly-snippets", -- collection of snippets accross languages
     },
+    event = "InsertEnter",
     config = function()
         local cmp = require("cmp")
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+        require("luasnip.loaders.from_vscode").lazy_load()
 
         cmp.setup({
             window = {
@@ -23,8 +28,9 @@ return {
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),
             }),
             sources = {
-                { name = "nvim_lsp" },
                 { name = "nvim_lsp_signature_help" },
+                { name = "luasnip" },
+                { name = "nvim_lsp" },
             },
             snippet = {
                 expand = function(args)
