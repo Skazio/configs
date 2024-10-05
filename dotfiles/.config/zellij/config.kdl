@@ -32,7 +32,7 @@ keybinds clear-defaults=true {
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
         bind "k" "Up" { MoveFocus "Up"; }
-        bind "Tab" { SwitchFocus; }
+        bind "Tab" { SwitchFocus; } 
         bind "d" { NewPane "Down"; }
         bind "n" { NewPane "Right"; }
         bind "x" { CloseFocus; }
@@ -56,12 +56,14 @@ keybinds clear-defaults=true {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
+        bind "H" "K" { MoveTab "Left"; }
+        bind "L" "J" { MoveTab "Right"; }
         bind "n" { NewTab; SwitchToMode "Normal"; }
         bind "x" { CloseTab; SwitchToMode "Normal"; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "Normal"; } // What
         bind "b" { BreakPane; SwitchToMode "Normal"; }
-        bind "]" { BreakPaneRight; SwitchToMode "Normal"; } //TEST
-        bind "[" { BreakPaneLeft; SwitchToMode "Normal"; } //TEST
+        bind "]" { BreakPaneRight; SwitchToMode "Normal"; } //TEST 
+        bind "[" { BreakPaneLeft; SwitchToMode "Normal"; } //TEST 
         bind "1" { GoToTab 1; }
         bind "2" { GoToTab 2; }
         bind "3" { GoToTab 3; }
@@ -115,8 +117,8 @@ keybinds clear-defaults=true {
     }
 
     session { // pas fait
-        bind "Ctrl o" { SwitchToMode "Normal"; }
-        bind "Ctrl s" { SwitchToMode "Scroll"; }
+        bind "Alt o" { SwitchToMode "Normal"; }
+        bind "Alt s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
             LaunchOrFocusPlugin "session-manager" {
@@ -165,7 +167,7 @@ keybinds clear-defaults=true {
     }
 
     shared_except "session" "locked" {
-        bind "Ctrl o" { SwitchToMode "Session"; }
+        bind "Alt o" { SwitchToMode "Session"; }
     }
 
     shared_except "tab" "locked" {
