@@ -30,10 +30,6 @@ alias ta='tmux attach'
 alias vim='nvim'
 alias z='zellij'
 
-
-
-
-
 # Ensure Docker is running on WSL 2. This expects you've installed Docker and
 # Docker Compose directly within your WSL distro instead of Docker Desktop, such as:
 #   - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
@@ -45,12 +41,10 @@ if grep -q "microsoft" /proc/version > /dev/null 2>&1
     end
 end
 
-# AWS
-alias ssh-vi='ssh -i "~/.ssh/jarod-ssh.pem" ubuntu@35.180.19.118'
-
-
 alias fishrc='nvim ~/.config/fish/config.fish'
 alias vimrc='cd ~/.config/nvim && nvim . ; cd -'
 alias tmuxrc='nvim ~/.tmux.conf'
 alias zellijrc='nvim ~/.config/zellij/config.kdl'
+
+abbr -a awk --position anywhere --set-cursor "awk '{%}'"
 
