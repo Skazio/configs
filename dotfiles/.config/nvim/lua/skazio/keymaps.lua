@@ -11,7 +11,7 @@ vim.keymap.set("n", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>gi")
 vim.keymap.set("v", "<C-s>", "<Esc>:w<CR>gv")
 
-vim.keymap.set("n", "<leader>h", "<Esc>:nohl<CR>", { desc = "Remove current search highlight" })
+vim.keymap.set("n", "<leader>sh", "<Esc>:nohl<CR>", { desc = "Remove current search highlight" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line 1 down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line 1 up" })
