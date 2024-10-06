@@ -8,17 +8,21 @@ return {
 
         gitsigns.setup()
 
-        vim.keymap.set("v", "<leader>gs", function()
+        vim.keymap.set("v", "<leader>hs", function()
             gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-        end, { desc = "Git stage selected hunks" })
+        end, { desc = "Stage selected Hunk" })
 
-        vim.keymap.set("v", "<leader>gr", function()
+        vim.keymap.set("v", "<leader>hr", function()
             gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-        end, { desc = "Git reset selected hunks" })
+        end, { desc = "Reset selected Hunk" })
 
-        vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Git preview hunk" })
+        vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Rest Hunk" })
 
-        vim.keymap.set("n", "[h", gitsigns.prev_hunk, { desc = "Git previous hunk" })
-        vim.keymap.set("n", "]h", gitsigns.next_hunk, { desc = "Git next hunk" })
+        vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Hunk preview" })
+
+        vim.keymap.set("n", "[h", gitsigns.prev_hunk, { desc = "Previous Hunk" })
+        vim.keymap.set("n", "]h", gitsigns.next_hunk, { desc = "Next Hunk" })
+
+        vim.keymap.set("n", "<leader>gb", gitsigns.blame, { desc = "Git blame" })
     end,
 }
