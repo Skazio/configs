@@ -1,5 +1,7 @@
 default_shell "fish"
 
+theme "nord"
+
 ui {
     pane_frames {
         rounded_corners true
