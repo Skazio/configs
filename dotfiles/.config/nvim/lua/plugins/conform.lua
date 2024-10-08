@@ -19,6 +19,8 @@ return {
                 yaml = { "prettier" },
                 markdown = { "prettier" },
                 lua = { "stylua" },
+                vue = { "prettier" },
+                python = { "ruff-format" },
             },
         })
 
