@@ -20,7 +20,7 @@ return {
                 markdown = { "prettier" },
                 lua = { "stylua" },
                 vue = { "prettier" },
-                python = { "ruff-format" },
+                python = { "ruff", "ruff_lint", "ruff_format", "ruff_organize_imports" },
             },
         })
 
