@@ -51,6 +51,8 @@ vim.opt.cursorline = true
 
 vim.opt.scrolloff = 8
 
+vim.opt.spell = true
+
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
