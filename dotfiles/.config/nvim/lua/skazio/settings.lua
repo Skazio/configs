@@ -1,4 +1,4 @@
-vim.opt.shell = '/usr/bin/fish'
+vim.opt.shell = "/usr/bin/fish"
 
 vim.opt.termguicolors = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" }) -- background transparent
@@ -29,6 +29,12 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn:append({ "80", "110" })
 
+vim.opt.wrap = false
+vim.opt.cursorline = true
+
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", extends = "…", precedes = "…" }
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -45,39 +51,38 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
-vim.opt.wrap = false
-vim.opt.cursorline = true
-
-vim.opt.scrolloff = 8
+vim.opt.inccommand = "split"
 
 vim.opt.spell = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
-    end,
-})
-if vim.fn.has("wsl") == 1 then
-    vim.g.clipboard = {
-        name = "win32yank-wsl",
-        copy = {
-            ["+"] = "win32yank.exe -i --crlf",
-            ["*"] = "win32yank.exe -i --crlf",
-        },
-        paste = {
-            ["+"] = "win32yank.exe -o --lf",
-            ["*"] = "win32yank.exe -o --lf",
-        },
-        cache_enabled = true,
-    }
-end
+-- Schedule the setting after `UiEnter` because it can increase startup-time.
+vim.schedule(function()
+    vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
+    vim.api.nvim_create_autocmd("TextYankPost", {
+        callback = function()
+            vim.highlight.on_yank({ higroup = "IncSearch", timeout = "200" })
+        end,
+    })
+    if vim.fn.has("wsl") == 1 then
+        vim.g.clipboard = {
+            name = "win32yank-wsl",
+            copy = {
+                ["+"] = "win32yank.exe -i --crlf",
+                ["*"] = "win32yank.exe -i --crlf",
+            },
+            paste = {
+                ["+"] = "win32yank.exe -o --lf",
+                ["*"] = "win32yank.exe -o --lf",
+            },
+            cache_enabled = true,
+        }
+    end
+end)
 
--- Print inside of lua tables ; useful when creating/debuggin plugins
+-- Print inside of Lua tables ; useful when creating/debugging plugins
 P = function(v)
     print(vim.inspect(v))
     return v

@@ -38,7 +38,15 @@ return {
                     },
                 },
             },
+
+            extensions = {
+                ["ui-select"] = {
+                    require("telescope.themes").get_dropdown({}),
+                },
+            },
         })
+
+        require("telescope").load_extension("ui-select")
 
         vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
         vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Find strings" })
@@ -49,6 +57,6 @@ return {
 
         vim.keymap.set("n", "<leader>fd", function()
             builtin.lsp_definitions({ jump_type = "never" })
-        end, { desc = "Find buffers" })
+        end, { desc = "Find definition" })
     end,
 }
