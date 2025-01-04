@@ -2,6 +2,7 @@
 -- mode
 return {
     "skazio/matchme.nvim",
+    keys = { "v" },
     config = function()
         require("matchme")
     end,

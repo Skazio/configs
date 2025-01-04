@@ -1,12 +1,25 @@
--- todo-comments highligh some keyword (ie. TODO, HACK) when in a comment and
+-- todo-comments highlight some keyword (ie. TODO, HACK) when in a comment and
 -- followed with by colon
 return {
     "folke/todo-comments.nvim",
-    event = { "BufReadPre", "BufNewFile" },
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-        local todo_comments = require("todo-comments")
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {},
+    keys = {
+        {
+            "]t",
+            function()
+                require("todo-comments").jump_next()
+            end,
+            desc = "Next todo comment",
+        },
 
-        todo_comments.setup()
-    end,
+        {
+            "[t",
+            function()
+                require("todo-comments").jump_prev()
+            end,
+            desc = "Previous todo comment",
+        },
+    },
 }

@@ -1,8 +1,17 @@
 return {
     "sindrets/diffview.nvim",
-    config = function()
-        require("diffview").setup({})
+    opts = {},
+    keys = {
+        {
+            "<leader>gd",
+            ":DiffviewOpen<CR>",
+            desc = "Open the Git diff",
+        },
 
-        vim.keymap.set("n", "<leader>gp", ":DiffviewFileHistory --follow %<CR>", { desc = "Git file history" })
-    end,
+        {
+            "<leader>gp",
+            ":DiffviewFileHistory -f %<CR>",
+            desc = "Git previous version of the file",
+        },
+    },
 }

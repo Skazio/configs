@@ -1,5 +1,6 @@
 -- fugitive is a git wrapper
 return {
+    --[[
     "tpope/vim-fugitive",
     config = function()
         vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Open Git status" })
@@ -10,4 +11,5 @@ return {
 
         vim.keymap.set("n", "<leader>gl", "<Esc>:Gclog %<CR>", { desc = "Git log of the current file" })
     end,
+    --]]
 }

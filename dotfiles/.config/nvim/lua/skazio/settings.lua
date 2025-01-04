@@ -1,8 +1,16 @@
-vim.opt.shell = "/usr/bin/fish"
+-- vim.opt.shell = "/usr/bin/fish" -- Linux
+vim.opt.shell = "/opt/homebrew/bin/fish" -- MacOs
 
 vim.opt.termguicolors = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" }) -- background transparent
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE", fg = "NONE" }) -- floating window background transparent
+vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "NONE", ctermbg = "NONE" })
+vim.api.nvim_set_hl(0, "SpellBad", { sp = "green", undercurl = true, blend = 100, nocombine = true })
+vim.api.nvim_set_hl(0, "SpellCap", {})
+vim.api.nvim_set_hl(0, "SpellRare", {})
 vim.o.showmode = false
+vim.opt.cmdheight = 0 -- Maybe there's a better way to not have "Press Enter" message
+
 vim.opt.guicursor = "n-c:block," .. "i-ci-ve:ver25," .. "v-r-cr:hor20," .. "o:hor50," .. "i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor," .. "sm:block-blinkwait175-blinkoff150-blinkon175"
 
 vim.diagnostic.config({
@@ -27,7 +35,7 @@ vim.opt.updatetime = 50
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
-vim.opt.colorcolumn:append({ "80", "110" })
+vim.opt.colorcolumn:append({ "74", "81", "89" })
 
 vim.opt.wrap = false
 vim.opt.cursorline = true
@@ -54,6 +62,10 @@ vim.opt.smartcase = true
 vim.opt.inccommand = "split"
 
 vim.opt.spell = true
+vim.opt.spellcapcheck = ""
+vim.opt.spelloptions = "camel"
+
+vim.opt.scrolloff = 0
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true

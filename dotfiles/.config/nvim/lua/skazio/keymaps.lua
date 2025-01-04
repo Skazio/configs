@@ -16,9 +16,6 @@ vim.keymap.set("n", "<leader>sh", "<Esc>:nohl<CR>", { desc = "Remove current sea
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line 1 down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line 1 up" })
 
-vim.keymap.set("n", "<Tab>", "<Esc>:bnext<CR>")
-vim.keymap.set("n", "<S-Tab>", "<Esc>:bprev<CR>")
-
 vim.keymap.set("n", "Y", "y$", { desc = "Copy till the end of line" })
 
 -- vim.keymap.set("n", "<leader>ss", "<Esc>:%s/\\V") -- not sure to keep
@@ -38,6 +35,11 @@ vim.keymap.set("n", "<leader>tn", ":tabnext<CR>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "<leader>tf", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
-vim.keymap.del("n", "grn")
-vim.keymap.del("n", "gra")
-vim.keymap.del("n", "grr")
+vim.keymap.set("n", "gh", function()
+    vim.diagnostic.open_float()
+end, { desc = "Get help on error message" })
+
+vim.keymap.set("n", "<leader>c", function()
+    local path = vim.fn.expand("%:.")
+    vim.fn.setreg("+", path)
+end, { desc = "Copy the relative path of the file" })

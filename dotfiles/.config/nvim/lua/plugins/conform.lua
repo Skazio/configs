@@ -17,10 +17,10 @@ return {
                 html = { "prettier" },
                 json = { "prettier" },
                 yaml = { "prettier" },
+                vue = { "prettier" },
                 markdown = { "prettier" },
                 lua = { "stylua" },
-                vue = { "prettier" },
-                python = { "ruff", "ruff_lint", "ruff_format", "ruff_organize_imports" },
+                python = { "ruff", "ruff_format", "ruff_organize_imports" },
             },
         })
 

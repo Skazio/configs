@@ -11,12 +11,14 @@ return {
         vim.keymap.set("v", "<leader>hs", function()
             gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, { desc = "Stage selected Hunk" })
+        vim.keymap.set("n", "<leader>hs", function()
+            gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+        end, { desc = "Stage current line Hunk" })
 
+        vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Rest Hunk" })
         vim.keymap.set("v", "<leader>hr", function()
             gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, { desc = "Reset selected Hunk" })
-
-        vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Rest Hunk" })
 
         vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Hunk preview" })
 

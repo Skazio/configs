@@ -1,14 +1,13 @@
 -- ts-autotag auto-closes tags
--- The renamming part is not really working...
+-- The renaming part is not really working...
 return {
-	"windwp/nvim-ts-autotag",
-	config = function()
-		require("nvim-ts-autotag").setup({
-			opts = {
-				enable_close = true,
-				enable_rename = true,
-				enable_close_on_slash = true,
-			},
-		})
-	end,
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+        opts = {
+            enable_close = true,
+            enable_rename = true,
+            enable_close_on_slash = true,
+        },
+    },
 }
