@@ -2,6 +2,13 @@ default_shell "fish"
 
 theme "nord"
 
+layout {
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+    pane
+}
+
 ui {
     pane_frames {
         rounded_corners true
