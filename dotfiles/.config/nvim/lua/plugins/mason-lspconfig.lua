@@ -51,6 +51,13 @@ return {
 
                 lspconfig.volar.setup({
                     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+                    settings = {
+                        volar = {
+                            codeLens = {
+                                tsconfigPaths = true, -- Ensure Volar respects paths in tsconfig.json
+                            },
+                        },
+                    },
                     init_options = {
                         vue = {
                             hybridMode = false,

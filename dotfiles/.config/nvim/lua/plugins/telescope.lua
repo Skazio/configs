@@ -28,6 +28,7 @@ return {
                         ["="] = actions.add_selection + actions.move_selection_next,
                         ["-"] = actions.remove_selection + actions.move_selection_next,
                         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                        ["<C-a>"] = actions.send_to_qflist + actions.open_qflist,
                     },
                     i = {
                         ["<S-tab>"] = actions.move_selection_next,
@@ -35,6 +36,7 @@ return {
                         ["<C-n>"] = actions.cycle_history_next,
                         ["<C-p>"] = actions.cycle_history_prev,
                         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                        ["<C-a>"] = actions.send_to_qflist + actions.open_qflist,
                     },
                 },
             },

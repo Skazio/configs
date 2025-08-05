@@ -9,7 +9,7 @@ vim.api.nvim_set_hl(0, "SpellBad", { sp = "green", undercurl = true, blend = 100
 vim.api.nvim_set_hl(0, "SpellCap", {})
 vim.api.nvim_set_hl(0, "SpellRare", {})
 vim.o.showmode = false
-vim.opt.cmdheight = 0 -- Maybe there's a better way to not have "Press Enter" message
+-- vim.opt.cmdheight = 0 -- Maybe there's a better way to not have "Press Enter" message
 
 vim.opt.guicursor = "n-c:block," .. "i-ci-ve:ver25," .. "v-r-cr:hor20," .. "o:hor50," .. "i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor," .. "sm:block-blinkwait175-blinkoff150-blinkon175"
 

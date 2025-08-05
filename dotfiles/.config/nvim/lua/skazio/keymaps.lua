@@ -26,8 +26,8 @@ vim.keymap.set("n", "zO", "zozczO", { desc = "Unfold recursively" })
 
 vim.keymap.set("n", "<leader>qo", ":copen<CR>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>qx", ":cclose<CR>", { desc = "Close quickfix list" })
-vim.keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = "Next quickfix element" })
-vim.keymap.set("n", "<leader>qp", ":cprev<CR>", { desc = "Previous quickfix element" })
+vim.keymap.set("n", "<leader>qn", ":cnext<CR>zz", { desc = "Next quickfix element" })
+vim.keymap.set("n", "<leader>qp", ":cprev<CR>zz", { desc = "Previous quickfix element" })
 
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open new tab" })
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close current tab" })
@@ -43,3 +43,11 @@ vim.keymap.set("n", "<leader>c", function()
     local path = vim.fn.expand("%:.")
     vim.fn.setreg("+", path)
 end, { desc = "Copy the relative path of the file" })
+
+vim.keymap.set("n", "<leader>pr", function()
+    vim.api.nvim_feedkeys("G?Create a pull request\njfh", "n", false)
+
+    vim.defer_fn(function()
+        vim.fn.jobstart({ "open", vim.fn.expand("<cfile>") }, { detach = true })
+    end, 100)
+end)

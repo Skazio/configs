@@ -25,6 +25,7 @@ return {
                         menu = 50,
                         abbr = 50,
                     },
+                    symbol_map = { Supermaven = "" },
                     ellipsis_char = "...",
                     show_labelDetails = true,
 
@@ -43,8 +44,8 @@ return {
             },
             mapping = cmp.mapping.preset.insert({
                 ["<C-space>"] = cmp.mapping.complete(),
-                ["<tab>"] = cmp.mapping.select_next_item(cmp_select),
-                ["<S-tab>"] = cmp.mapping.select_prev_item(cmp_select),
+                ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+                ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -53,6 +54,7 @@ return {
                 { name = "nvim_lsp_signature_help" },
                 { name = "luasnip" },
                 { name = "nvim_lsp" },
+                -- { name = "supermaven" },
             },
             snippet = {
                 expand = function(args)
