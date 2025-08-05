@@ -1,50 +1,83 @@
-set -x EDITOR /usr/local/bin/nvim
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
 
+#add homebrew binaries to PATH
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
+fish_add_path /usr/local/bin
+
+set --export VIRTUAL_ENV_DISABLE_PROMPT 1
+set --export EDITOR /opt/homebrew/bin/nvim
+# set -x EDITOR /usr/local/bin/nvim
+
+# allow sudo to use alias
+function sudo
+    if functions -q $argv[1]
+        set argv fish -c "$argv"
+    end
+    command sudo $argv
+end
+
+function fish_user_key_bindings
+    bind \cx\ce edit_command_buffer
+end
+
+# git
 alias gs='git status'
 alias gl='git log'
 alias ga='git add'
+alias gaa='git add --all'
 alias gc='git commit'
+alias gcv='git commit --no-verify'
 alias gck='git checkout'
 alias gd='git diff'
 alias grs='git restore --staged'
-alias g↑='git push'
+alias gri='git rebase -i'
+alias gsh='git stash'
+alias gsp='git stash pop'
+alias gsl='git stash list'
+alias wip='git add --all && gc -m "WIP" --no-verify'
+alias unwip='git reset --soft HEAD^1'
+alias gb='gck dev && git pull && gck -b '
 
-function fish_user_key_bindings
-  bind \cr 'peco_select_history (commandline -b)'
-end
+# bat
+alias cat="bat"
+alias rcat="/bin/cat"
 
+# exa
+alias ll="exa -l -g --header --icons --sort=type"
+alias lla="ll -a"
+alias llt="ll --tree -L 2"
+alias llta="llt -a"
 
-if type -q exa
-	alias ll   "exa -l -g --header --icons"
-	alias lla  "ll -ah"
-	alias llt  "ll --tree -L 2"
-	alias llta "llt -ha"
-end
+# peco
+bind \cr 'peco_select_history (commandline -b)'
 
-alias cat='batcat'
-alias rcat='/bin/cat'
-alias python='python3'
-alias f="fish"
-alias t='tmux'
-alias ta='tmux attach'
-alias vim='nvim'
-alias z='zellij'
+# python
+alias python="python3"
+alias pip="pip3"
 
-# Ensure Docker is running on WSL 2. This expects you've installed Docker and
-# Docker Compose directly within your WSL distro instead of Docker Desktop, such as:
-#   - https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
-#   - https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
-#   - https://docs.docker.com/compose/install/linux/
-if grep -q "microsoft" /proc/version > /dev/null 2>&1
-    if service docker status 2>&1 | grep -q "is not running"
-        wsl.exe --distribution "$WSL_DISTRO_NAME" --user root --exec /usr/sbin/service docker start > /dev/null 2>&1
-    end
-end
+alias wrap_on='echo -ne "\e[?7l"'
+alias wrap_off='echo -ne "\e[?7h"'
 
+# ls remap
+# bind \cf 'll ; commandline -f execute'
+bind \ch 'lla ; commandline -f execute'
+
+# source env remap
+bind \cs 'source .venv/bin/activate.fish; commandline -f execute; echo "python venv sourced."'
+
+# config
 alias fishrc='nvim ~/.config/fish/config.fish'
-alias vimrc='cd ~/.config/nvim && nvim . ; cd -'
+alias vimrc='nvim ~/.config/nvim/init.lua'
 alias tmuxrc='nvim ~/.tmux.conf'
 alias zellijrc='nvim ~/.config/zellij/config.kdl'
+alias reload='source ~/.config/fish/config.fish'
+
+# programs <3
+alias vim="nvim"
+alias t='tmux'
+alias z='zellij --layout ~/.config/zellij/config.kdl'
 
 abbr -a awk --position anywhere --set-cursor "awk '{%}'"
-

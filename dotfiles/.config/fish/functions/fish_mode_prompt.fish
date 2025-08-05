@@ -3,4 +3,3 @@ function fish_mode_prompt
     echo "╭─󰣠 "
     set_color normal
 end
-

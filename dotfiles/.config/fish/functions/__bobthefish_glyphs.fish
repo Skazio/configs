@@ -102,4 +102,3 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
     set fossil_glyph '' # blank, for lack of a good fallback
   end
 end
-
