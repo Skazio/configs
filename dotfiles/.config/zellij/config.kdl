@@ -1,6 +1,11 @@
 default_shell "fish"
 
-theme "nord"
+layout {
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+    pane
+}
 
 ui {
     pane_frames {
@@ -12,10 +17,6 @@ ui {
 keybinds clear-defaults=true {
     normal {
         bind "Alt e" { EditScrollback; SwitchToMode "Normal"; }
-    }
-
-    locked {
-        bind "Alt g" { SwitchToMode "Normal"; }
     }
 
     resize {
@@ -132,17 +133,16 @@ keybinds clear-defaults=true {
     }
 
     shared_except "locked" {
-        bind "Alt 1" { GoToTab 1; }
-        bind "Alt 2" { GoToTab 2; }
-        bind "Alt 3" { GoToTab 3; }
-        bind "Alt 4" { GoToTab 4; }
+        bind "Alt Shift _" { GoToTab 1; }
+        bind "Alt Shift -" { GoToTab 2; }
+        bind "Alt Shift \"" { GoToTab 3; }
+        bind "Alt Shift '" { GoToTab 4; }
         bind "Alt 5" { GoToTab 5; }
         bind "Alt 6" { GoToTab 6; }
         bind "Alt 7" { GoToTab 7; }
         bind "Alt 8" { GoToTab 8; }
         bind "Alt 9" { GoToTab 9; }
 
-        bind "Alt g" { SwitchToMode "Locked"; }
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
